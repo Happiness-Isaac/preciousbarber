@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Precious Barber — Sharp Lines, Old-School Respect</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/barber.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <a href="home.html" class="brand" aria-label="Precious Barber home">
+                <img class="logo-img" src="images/logo.png" alt="Precious Barber logo">
+            </a>
+            <div class="navtools">
+                <button id="themeToggle" aria-label="Toggle dark mode"><svg id="themeIcon" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none"></svg></button>
+                <button id="menuBtn" aria-label="Open menu"><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div id="drawerOverlay"></div>
+    <nav id="navDrawer" aria-label="Site navigation">
+        <div class="drawer-head"><span>Menu</span><button id="closeDrawer" aria-label="Close menu">✕</button></div>
+        <ul class="drawer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html#about">About Us</a></li>
+            <li><a href="home.html#services">Services</a></li>
+            <li><a href="home.html#gallery">Gallery</a></li>
+            <li><a href="home.html#academy">Academy</a></li>
+            <li><a href="home.html#booking">Booking</a></li>
+            <li><a href="home.html#feedback">Feedback</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="drawer-foot">Need us urgently?<br><a href="https://wa.me/2348136750711" target="_blank"
+                rel="noopener">Chat on WhatsApp →</a></div>
+    </nav>
+
+    <section class="ty-wrap">
+        <div class="ty-card">
+            <svg class="ty-icon" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6" />
+                <path d="M8 12.5l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+            <p class="kicker" id="tyKicker">ALL SET</p>
+            <h1 id="tyTitle">Thank you!</h1>
+            <div class="ty-stars" id="tyStars" style="display:none"></div>
+            <p id="tyMsg">We've received your message and will get back to you shortly.</p>
+            <a class="btn btn-gold" href="home.html">Back to home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot-bottom" style="border-top:0;padding-top:0">
+                <span>Precious Barber © 2026. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <script src="common.js"></script>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var type = params.get('type');
+            var kicker = document.getElementById('tyKicker'), title = document.getElementById('tyTitle'), msg = document.getElementById('tyMsg');
+            if (type === 'feedback') {
+                kicker.textContent = 'FEEDBACK RECEIVED';
+                title.textContent = 'Thanks for the feedback!';
+                msg.textContent = "We read every message and really appreciate you taking the time.";
+                var rating = parseInt(params.get('rating') || '0');
+                if (rating > 0) {
+                    var starsEl = document.getElementById('tyStars');
+                    starsEl.style.display = 'flex';
+                    for (var i = 1; i <= 5; i++) {
+                        var s = document.createElement('span'); s.textContent = '★';
+                        if (i <= rating) s.classList.add('on');
+                        starsEl.appendChild(s);
+                    }
+                }
+            } else if (type === 'booking') {
+                kicker.textContent = 'BOOKING REQUESTED';
+                title.textContent = "Thanks — you're almost booked!";
+                msg.textContent = "We've got your request. If a WhatsApp or email window opened, just hit send there so we can confirm your slot.";
+            } else if (type === 'enroll') {
+                kicker.textContent = 'APPLICATION RECEIVED';
+                title.textContent = 'Thank you for applying!';
+                msg.textContent = "We'll get back to you about your enrollment shortly — keep an eye on your inbox and phone.";
+            }
+        })();
+    </script>
+</body>
+
+</html>

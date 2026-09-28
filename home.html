@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Precious Barber — The Best!</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/barber.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <a href="home.html" class="brand" aria-label="Precious Barber home">
+                <img class="logo-img" src="images/logo.png" alt="Precious Barber logo">
+            </a>
+            <div class="navtools">
+                <button id="themeToggle" aria-label="Toggle dark mode"><svg id="themeIcon" width="18" height="18"
+                        viewBox="0 0 24 24" fill="none"></svg></button>
+                <button id="menuBtn" aria-label="Open menu"><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div id="drawerOverlay"></div>
+    <nav id="navDrawer" aria-label="Site navigation">
+        <div class="drawer-head"><span>Menu</span><button id="closeDrawer" aria-label="Close menu">✕</button></div>
+        <ul class="drawer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#academy">Academy</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="drawer-foot">Need us urgently?<br><a href="https://wa.me/2348136750711" target="_blank"
+                rel="noopener">Chat on WhatsApp →</a></div>
+    </nav>
+
+    <section id="home">
+        <div id="slides"></div>
+        <div class="hero-inner">
+            <div class="wrap">
+                <p class="kicker">PRECIOUS BARBER · LAGOS, NIGERIA</p>
+                <h1 class="h1">Your Look,<br>Our Masterpiece.</h1>
+                
+                <div class="hero-cta">
+                    <a class="btn btn-gold" href="#booking">Book an appointment</a>
+                    <a class="btn btn-line" style="color:#faf7f2;border-color:rgba(250,247,242,.5)" href="#services">See
+                        services &amp; prices</a>
+                </div>
+                <div class="dots" id="dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="wrap about-grid">
+            <div class="reveal">
+                <p class="kicker">ABOUT US</p>
+                <h2>Craft over shortcuts</h2>
+                <p class="lede">Precious Barber started with one chair and a simple rule: treat every client like a
+                    regular from day one. Today we're a full grooming studio, but that rule hasn't changed — every cut
+                    still starts with a real conversation, not a stopwatch.</p>
+                <p class="lede" style="margin-top:16px">We train our own barbers through our Academy, so the standard
+                    you get here is the standard we teach.</p>
+            </div>
+            <div class="about-stats reveal">
+                <div><b>10+</b><span>Years grooming Experience</span></div>
+                <div><b>6</b><span>Barbers on the floor</span></div>
+                <div><b>5 ★</b><span>Client rating</span></div>
+                <div><b>3 - 6</b><span>Months Academy intake</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <p class="kicker">SERVICES</p>
+                <h2>Explore our Services</h2>
+                <p class="lede">Every cut starts with a consultation. — Swipe in your real menu any time.</p>
+            </div>
+            <div class="tabs" id="tabs"></div>
+            <div class="svc-grid" id="svcGrid"></div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <p class="kicker">GALLERY</p>
+                <h2>Fresh from the chair</h2>
+                <p class="lede">Our Work.</p>
+            </div>
+            <div class="gal-wrap">
+                <div class="gal-viewport">
+                    <div class="gal-track" id="galTrack"></div>
+                    <button class="gal-expand" id="galExpand" aria-label="Expand">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <button class="gal-arrow prev" id="galPrev" aria-label="Previous">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="gal-arrow next" id="galNext" aria-label="Next">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="gal-dots" id="galDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="academy">
+        <div class="wrap academy-grid">
+            <div class="reveal">
+                <p class="kicker">ACADEMY</p>
+                <h2>Learn from the best!</h2>
+                <p class="lede">Our academy trains the next generation of barbers — fundamentals, fades, beard
+                    sculpting, straight-razor safety and how to run a chair like a business.</p>
+                <ul class="feat-list">
+                    <li><svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="2" />
+                        </svg>Hands-on training with real clients, not just mannequins</li>
+                    <li><svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="2" />
+                        </svg>Small class sizes with one-on-one feedback</li>
+                    <li><svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="2" />
+                        </svg>Certificate on completion, plus chair placement support</li>
+                </ul>
+                <div class="stat-card" style="margin-top:30px">
+                    <div class="stat-row"><span>Programme length</span><b>3 - 6 Months</b></div>
+                    <div class="stat-row"><span>Class size</span><b>6 seats</b></div>
+                    <div class="stat-row"><span>Next intake</span><b>TBD</b></div>
+                    <div class="stat-row"><span>Tuition</span><b>₦100,000</b></div>
+                </div>
+            </div>
+
+            <form class="panel reveal" id="enrollForm" action="https://formsubmit.co/mmabahappiness@gmail.com"
+                method="POST">
+                <h3 style="margin-bottom:6px">Enroll Now!</h3>
+                <p class="lede" style="margin-bottom:20px">Fill this in and we'll reach out about your spot.</p>
+                <input type="hidden" name="_subject" value="New Academy Enrollment — Precious Barber">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" id="enrollNext" value="thank-you.html?type=enroll">
+                <div class="field-row">
+                    <div><label for="eName">Full name</label><input id="eName" name="Full name" required></div>
+                    <div><label for="eAge">Age</label><input id="eAge" name="Age" type="number" min="14" required></div>
+                </div>
+                <div class="field-row">
+                    <div><label for="ePhone">Phone</label><input id="ePhone" name="Phone" type="tel" required></div>
+                    <div><label for="eEmail">Email</label><input id="eEmail" name="Email" type="email" required></div>
+                </div>
+                <div class="full">
+                    <label for="eProgram">Programme</label>
+                    <select id="eProgram" name="Programme">
+                        <option>Barbering Fundamentals</option>
+                        <option>Fade Specialist</option>
+                        <option>Business &amp; Chair Management</option>
+                    </select>
+                </div>
+                <div class="full">
+                    <label for="eProgram">Duration</label>
+                    <select id="eDuration" name="Duration">
+                        <option>3 Months</option>
+                        <option>6 Months</option>
+                    </select>
+                </div>
+                <div class="full"><label for="eNote">Anything we should know?</label><textarea id="eNote" name="Message"
+                        rows="3"></textarea></div>
+                <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Submit Application </button>
+                <p class="form-note">We'll email you back at the address above.</p>
+            </form>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="wrap">
+            <div class="side-note reveal">
+                <p class="kicker">BOOKING</p>
+                <h2>Reserve your chair</h2>
+                <p class="lede">Fill in your details.</p>
+            </div>
+            <form class="panel reveal" id="bookingForm">
+                <div class="field-row">
+                    <div><label for="bName">Full name</label><input id="bName" required></div>
+                    <div><label for="bPhone">Phone</label><input id="bPhone" type="tel" required></div>
+                </div>
+                <div class="field-row">
+                    <div><label for="bService">Service</label>
+                        <select id="bService">
+                            <option>Adult Haircut</option>
+                            <option>Fade</option>
+                            <option>Beard Trim</option>
+                            <option>Haircut + Beard</option>
+                            <option>Kids Cut</option>
+                            <option>Dread</option>
+                            <option>Home Service</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div><label for="bBarber">Preferred barber</label>
+                        <select id="bBarber">
+                            <option>No preference</option>
+                            <option>Precious</option>
+                            <option>Junior</option>
+                            <option>David</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div><label for="bDate">Preferred date</label><input id="bDate" type="date"></div>
+                    <div><label for="bTime">Preferred time</label><input id="bTime" type="time"></div>
+                </div>
+                <div class="full"><label for="bNote">Notes (optional)</label><textarea id="bNote" rows="3"></textarea>
+                </div>
+                <div class="choice-row">
+                    <button type="button" class="btn btn-gold" id="bookWa">Book on WhatsApp</button>
+                    <button type="button" class="btn btn-line" id="bookMail">Book by email</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="feedback">
+        <div class="wrap">
+            <div class="side-note reveal">
+                <p class="kicker">FEEDBACK</p>
+                <h2>Tell us about our service</h2>
+                <p class="lede">Good, bad, or somewhere in between — we read every message and use it to get better.</p>
+            </div>
+            <form class="panel reveal" id="feedbackForm" action="https://formsubmit.co/mmabahappiness@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Feedback — Precious Barber">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" id="fbNext" value="thank-you.html?type=feedback">
+                <input type="hidden" name="Rating" id="fRatingInput" value="0">
+                <div class="full"><label for="fName">Name</label><input id="fName" name="Name" required></div>
+                <div class="full"><label>Rating</label>
+                    <div class="stars" id="stars">
+                        <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span
+                            data-v="4">★</span><span data-v="5">★</span>
+                    </div>
+                </div>
+                <div class="full"><label for="fMsg">Your feedback</label><textarea id="fMsg" name="Feedback" rows="4"
+                        required></textarea></div>
+                <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send
+                    feedback</button>
+                <p class="form-note"></p>
+            </form>
+        </div>
+    </section>
+
+    <section id="loopvideo">
+        <video autoplay muted loop playsinline>
+            <source src="videos/loopvideo.mp4" type="video/mp4">
+        </video>
+        <div class="fade"></div>
+        <div class="vcap">
+            <p class="kicker">PRECIOUS BARBER</p>
+            <h3>The Best!<h3>
+        </div>
+    </section>
+
+    <footer id="siteFooter">
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <div class="foot-brand">
+                        <img class="foot-logo-img" src="images/logo.png" alt="Precious Barber logo">
+                    </div>
+                    <p class="lede">Modern grooming, classic standards. Ikorodu, Lagos.</p>
+                    <div class="social">
+                        <a href="https://www.instagram.com/the_precious_barber?stkn=MXhtaWlieXd4MHI4bw==" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                        <a href="https://www.tiktok.com/@the_precious_barber?_r=1&_d=f4df9flelka9e7&sec_uid=MS4wLjABAAAAtN5Uei80c_iwTwKHAHXE4sn-UqUYw0IOtDD3DgiBxOUclQJrwu2eoRrLAKzj_cpr&share_author_id=7346243973050450950&sharer_language=en&source=h5_m&u_code=ed51lj0632dclm&timestamp=1790537336&user_id=7346243973050450950&sec_user_id=MS4wLjABAAAAtN5Uei80c_iwTwKHAHXE4sn-UqUYw0IOtDD3DgiBxOUclQJrwu2eoRrLAKzj_cpr&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7687594191690630930&share_link_id=3924966e-4efc-4d82-810d-2e53a9651ab1&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" aria-label="Tik-tok"><img src="images/tiktok.png" alt="tik-tok"></a>
+                        <a href="https://www.facebook.com/share/1ZkvFk1jhx/" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                        <a href="https://x.com/" aria-label="X (Twitter)"><img src="images/x.png" alt="X"></a>
+                        <a href="https://youtube.com/@the-precious-barber?si=N3ERdnSxlLnfbEGi" aria-label="YouTube"><img src="images/youtube.png" alt="YouTube"></a>
+                        <a href="https://www.threads.com/@the_precious_barber" aria-label="Threads"><img src="images/threads.png" alt="Threads"></a>
+                        <a href="https://wa.me/2348136750711" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="images/social.png" alt="WhatsApp"></a>
+                        <a href="mailto:mmabahappiness@gmail.com" aria-label="Email"><img src="images/mail.png" alt="Email"></a>
+                        <a href="tel:+2348136750711" aria-label="Call"><img src="images/call.png" alt="Phone"></a>
+                    </div>
+                </div>
+                <div class="foot-col">
+                    <h5>EXPLORE</h5>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#academy">Academy</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h5>CLIENT</h5>
+                    <ul>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="contactus.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h5>VISIT US</h5>
+                    <ul style="margin-bottom:16px">
+                        <li> JH29+VHV, Igbe, Opposite PZ Estate, Ikorodu, Lagos</li>
+                        <li>+234 813 675 0711</li>
+                        <li>mmabahappiness@gmail.com</li>
+                    </ul>
+                    <h5>OPENING HOURS</h5>
+                    <div class="foot-hours">
+                        <div><span>Mon – Fri</span><span>8am – 6pm</span></div>
+                        <div><span>Saturday</span><span>8am – 4pm</span></div>
+                        <div><span>Sunday</span><span>Closed</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <span>Precious Barber © 2026. All rights reserved.</span>
+                <span>Ikorodu, Lagos - Nigeria</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox">
+        <div class="lb-inner">
+            <button id="lbClose" aria-label="Close">✕</button>
+            <div class="field" id="lbField"></div>
+        </div>
+    </div>
+
+    <button id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <script src="scripts/common.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
