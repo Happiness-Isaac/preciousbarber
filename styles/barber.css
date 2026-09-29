@@ -462,14 +462,21 @@ html[data-theme="light"] #home::before {
 
 .h1 {
     color: #faf7f2;
-    font-size: clamp(2.3rem, 6vw, 4.4rem);
-    margin: 5px 0 30px;
+    font-size: clamp(2.3rem, 6vw, 4.4rem)
 }
 
 html[data-theme="light"] .h1 {
     color: var(--ink)
 }
 
+.hero-inner .lede {
+    color: #d9d5cb;
+    margin: 18px 0 30px
+}
+
+html[data-theme="light"] .hero-inner .lede {
+    color: #4a453f
+}
 
 .hero-cta {
     display: flex;
@@ -1417,9 +1424,13 @@ footer .lede {
 }
 
 .social a img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     object-fit: contain
+}
+
+.social a img+span {
+    display: none
 }
 
 .foot-bottom {

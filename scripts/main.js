@@ -1,7 +1,7 @@
 (function () {
     var WHATSAPP_NUMBER = '2348136750711';
     var EMAIL_ADDRESS = 'mmabahappiness@gmail.com';
-    var THANK_YOU_URL = new URL('thank-you.html', window.location.href).href;
+    var THANK_YOU_URL = new URL('thank.html', window.location.href).href;
 
     /* ---------- hero slider ---------- */
     var palettes = [['#241d08', '#0d0d0e'], ['#1c1c1e', '#0d0d0e'], ['#221a06', '#151517'], ['#0d0d0e', '#241d08']];
@@ -62,6 +62,16 @@
 
     /* ---------- gallery carousel + lightbox ---------- */
     var galItems = [
+        { type: 'image', caption: 'Skin fade — add photo' },
+        { type: 'video', caption: 'Beard sculpt — add video' },
+        { type: 'image', caption: 'Classic taper — add photo' },
+        { type: 'image', caption: 'Hot towel shave — add photo' },
+        { type: 'video', caption: 'Line-up in motion — add video' },
+        { type: 'image', caption: 'Skin fade — add photo' },
+        { type: 'video', caption: 'Beard sculpt — add video' },
+        { type: 'image', caption: 'Classic taper — add photo' },
+        { type: 'image', caption: 'Hot towel shave — add photo' },
+        { type: 'video', caption: 'Line-up in motion — add video' },
         { type: 'image', caption: 'Skin fade — add photo' },
         { type: 'video', caption: 'Beard sculpt — add video' },
         { type: 'image', caption: 'Classic taper — add photo' },
@@ -129,7 +139,7 @@
         document.getElementById('bookMail').onclick = function () {
             if (!document.getElementById('bName').value || !document.getElementById('bPhone').value) { alert('Please add your name and phone number.'); return; }
             window.location.href = 'mailto:' + EMAIL_ADDRESS + '?subject=' + encodeURIComponent('Booking request — ' + document.getElementById('bName').value) + '&body=' + encodeURIComponent(bookingText());
-            setTimeout(function () { window.location.href = 'thank-you.html?type=booking'; }, 600);
+            setTimeout(function () { window.location.href = 'thank.html?type=booking'; }, 600);
         };
     }
 
