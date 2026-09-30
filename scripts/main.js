@@ -1,6 +1,6 @@
 (function () {
     var WHATSAPP_NUMBER = '2348136750711';
-    var EMAIL_ADDRESS = 'mmabahappiness@gmail.com';
+    var EMAIL_ADDRESS = 'preciousndu324@gmail.com';
     var THANK_YOU_URL = new URL('thank.html', window.location.href).href;
 
     /* ---------- hero slider ---------- */
