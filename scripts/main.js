@@ -1,26 +1,31 @@
 (function () {
-    var WHATSAPP_NUMBER = '2348136750711';
+    var WHATSAPP_NUMBER = '2347012833530';
     var EMAIL_ADDRESS = 'preciousndu324@gmail.com';
     var THANK_YOU_URL = new URL('thank.html', window.location.href).href;
 
     /* ---------- hero slider ---------- */
-    var palettes = [['#241d08', '#0d0d0e'], ['#1c1c1e', '#0d0d0e'], ['#221a06', '#151517'], ['#0d0d0e', '#241d08']];
-    var icons = [
-        '<path d="M6 8c8 8 8 16 0 24M34 8c-8 8-8 16 0 24" stroke="currentColor" stroke-width="2" fill="none"/>',
-        '<circle cx="10" cy="30" r="5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M14 13l22 22M14 27l22-22" stroke="currentColor" stroke-width="2"/>',
-        '<rect x="4" y="16" width="32" height="4" fill="currentColor"/><rect x="4" y="24" width="32" height="4" fill="currentColor"/>',
-        '<path d="M8 4v32M16 4v32M24 4v32M32 4v32" stroke="currentColor" stroke-width="2"/>'
+    var heroImages = [
+        'images/pb1.jpeg',
+        'images/pb2.jpeg',
+        'images/pb3.jpeg',
+        'images/pb4.jpeg'
     ];
+
     var slidesEl = document.getElementById('slides'), dotsEl = document.getElementById('dots');
     if (slidesEl) {
-        palettes.forEach(function (p, i) {
-            var d = document.createElement('div'); d.className = 'slide' + (i === 0 ? ' active' : '');
-            d.innerHTML = '<div class="field" style="--s1:' + p[0] + ';--s2:' + p[1] + '"></div><svg class="icon" viewBox="0 0 40 40">' + icons[i] + '</svg>';
+        heroImages.forEach(function (src, i) {
+            var d = document.createElement('div');
+            d.className = 'slide' + (i === 0 ? ' active' : '');
+            d.innerHTML = '<div class="field" style="background-image:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url(\'' + src + '\');background-size:cover;background-position:center"></div>';
             slidesEl.appendChild(d);
-            var dot = document.createElement('button'); if (i === 0) dot.className = 'active';
+
+            var dot = document.createElement('button');
+            if (i === 0) dot.className = 'active';
+            dot.setAttribute('aria-label', 'Show slide ' + (i + 1));
             dot.onclick = function () { showHero(i); };
             dotsEl.appendChild(dot);
         });
+
         var hSlides = slidesEl.children, hDots = dotsEl.children, hCur = 0;
         function showHero(i) {
             hSlides[hCur].classList.remove('active'); hDots[hCur].classList.remove('active');

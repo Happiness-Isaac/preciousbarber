@@ -98,7 +98,8 @@ h3 {
     color: var(--text-muted);
     font-size: 1.05rem;
     max-width: 56ch;
-    line-height: 1.65
+    line-height: 1.65;
+    margin: 10px 0 0
 }
 
 .btn {
@@ -106,7 +107,8 @@ h3 {
     align-items: center;
     gap: 8px;
     padding: 14px 26px;
-    border-radius: 2px;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     font-weight: 600;
     font-size: .95rem;
     border: 1px solid transparent;
@@ -462,7 +464,8 @@ html[data-theme="light"] #home::before {
 
 .h1 {
     color: #faf7f2;
-    font-size: clamp(2.3rem, 6vw, 4.4rem)
+    font-size: clamp(2.3rem, 6vw, 4.4rem);
+    margin: 5px 0 30px
 }
 
 html[data-theme="light"] .h1 {
@@ -513,10 +516,6 @@ html[data-theme="light"] .hero-inner .lede {
     margin-bottom: 52px
 }
 
-.sec-head h2 {
-    font-size: clamp(1.85rem, 3.4vw, 2.5rem);
-    margin: 8px 0 14px
-}
 
 /* about */
 .about-grid {
@@ -1165,32 +1164,20 @@ html[data-theme="light"] .map-card {
 }
 
 .map-visual {
-    height: 280px;
+    height: 320px;
     position: relative;
-    background:
-        linear-gradient(var(--line-d) 1px, transparent 1px) 0 0/34px 34px,
-        linear-gradient(90deg, var(--line-d) 1px, transparent 1px) 0 0/34px 34px, var(--bg-alt);
-    display: flex;
-    align-items: center;
-    justify-content: center
 }
 
-html[data-theme="light"] .map-visual {
-    background:
-        linear-gradient(var(--line-l) 1px, transparent 1px) 0 0/34px 34px,
-        linear-gradient(90deg, var(--line-l) 1px, transparent 1px) 0 0/34px 34px, var(--bg-alt)
+.map-visual iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.map-pin {
-    width: 46px;
-    height: 46px;
-    color: var(--gold);
-    animation: none;
-    transition: transform .25s ease
-}
-
-.map-visual:hover .map-pin {
-    transform: translateY(-6px)
+[data-theme="dark"] .map-visual iframe {
+    filter: invert(90%) hue-rotate(180deg);
 }
 
 .map-info {
@@ -1352,17 +1339,17 @@ footer a {
 }
 
 .foot-logo-img {
-    height: 44px;
+    height: 50px;
     width: auto
 }
 
 footer .lede {
     color: #a8a39a;
-    font-size: .9rem
+    font-size: .70rem
 }
 
 .foot-col h5 {
-    font-size: .78rem;
+    font-size: .75rem;
     letter-spacing: .08em;
     color: var(--gold-light);
     font-weight: 700;
@@ -1374,7 +1361,7 @@ footer .lede {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-size: .9rem;
+    font-size: .70rem;
     color: #c9c5bb
 }
 
@@ -1391,7 +1378,7 @@ footer .lede {
 .foot-hours div {
     display: flex;
     justify-content: space-between;
-    font-size: .85rem;
+    font-size: .70rem;
     color: #c9c5bb;
     padding: 4px 0
 }
@@ -1406,21 +1393,16 @@ footer .lede {
 .social a {
     width: 38px;
     height: 38px;
-    border: 1px solid rgba(255, 255, 255, .15);
-    border-radius: 50%;
+    border: 1px solid var(--black);
     display: grid;
     place-items: center;
-    color: #e7e3da;
-    font-size: .6rem;
     text-align: center;
     transition: border-color .2s ease, color .2s ease, transform .2s ease;
     overflow: hidden
 }
 
 .social a:hover {
-    border-color: var(--gold);
-    color: var(--gold-light);
-    transform: translateY(-4px)
+    transform: translateY(-5px)
 }
 
 .social a img {
@@ -1440,7 +1422,7 @@ footer .lede {
     flex-wrap: wrap;
     gap: 16px;
     padding-top: 26px;
-    font-size: .82rem;
+    font-size: .60rem;
     color: #8c877e
 }
 
@@ -1453,7 +1435,7 @@ footer .lede {
     height: 46px;
     border-radius: 50%;
     background: var(--gold);
-    color: #0d0d0e;
+    color: var(--black);
     border: 0;
     display: grid;
     place-items: center;
